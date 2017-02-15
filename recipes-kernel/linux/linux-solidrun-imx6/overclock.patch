@@ -1,0 +1,23 @@
+diff --git a/arch/arm/mach-imx/mach-imx6q.c b/arch/arm/mach-imx/mach-imx6q.c
+index d642c14..41896a3 100644
+--- a/arch/arm/mach-imx/mach-imx6q.c
++++ b/arch/arm/mach-imx/mach-imx6q.c
+@@ -486,6 +486,8 @@ static void __init imx6q_opp_check_speed_grading(struct device *cpu_dev)
+ 	val >>= OCOTP_CFG3_SPEED_SHIFT;
+ 	val &= 0x3;
+ 
++	pr_info("CPU SPEED_GRADING = %d\n", val);
++#if 0
+ 	if (val != OCOTP_CFG3_SPEED_1P2GHZ) {
+ 		opp = dev_pm_opp_find_freq_exact(cpu_dev, 1200000000, true);
+ 		if (!IS_ERR(opp)) {
+@@ -493,7 +495,8 @@ static void __init imx6q_opp_check_speed_grading(struct device *cpu_dev)
+ 				pr_warn("failed to disable 1.2 GHz OPP\n");
+ 		}
+ 	}
+-	if (val < OCOTP_CFG3_SPEED_996MHZ) {
++#endif
++   if (val < OCOTP_CFG3_SPEED_996MHZ) {
+ 		opp = dev_pm_opp_find_freq_exact(cpu_dev, 996000000, true);
+ 		if (!IS_ERR(opp)) {
+ 			if (dev_pm_opp_disable(cpu_dev, 996000000))

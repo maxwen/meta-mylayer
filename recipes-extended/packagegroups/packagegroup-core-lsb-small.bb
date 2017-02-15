@@ -30,8 +30,6 @@ RDEPENDS_packagegroup-core-lsb-small = "\
     libaio \
     lrzsz \
     lzo \
-    mdadm \
-    neon \
     parted \
     screen \
     setserial \
@@ -46,7 +44,6 @@ RDEPENDS_packagegroup-core-lsb-small = "\
     db \
     sqlite3 \
     gdbm \
-    zlib \
     expat \
     gdbm \
     gmp \
@@ -101,10 +98,11 @@ RDEPENDS_packagegroup-core-lsb-small = "\
     libgcc \
     libpam \
     libxml2 \
-    ncurses \
     zlib \
     nspr \
     libpng12 \
     nss \
+    ldd \
+    bzip2 \
 "
 
