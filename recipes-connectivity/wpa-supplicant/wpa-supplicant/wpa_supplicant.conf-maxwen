@@ -1,0 +1,8 @@
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+    ssid="maxwen1-24"
+    psk=591e11c0824a5dfb28dab4c8cfb5e83502915fd123ac1cea48a851a5730c3fef
+}
